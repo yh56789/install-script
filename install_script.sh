@@ -519,6 +519,7 @@ install_trojan_panel() {
     cat >${NGINX_CONFIG} <<-EOF
 server {
     listen       ${trojan_panel_ui_port} ssl;
+    listen       [::]:${trojan_panel_ui_port} ssl;
     server_name  ${domain};
 
     #强制ssl
